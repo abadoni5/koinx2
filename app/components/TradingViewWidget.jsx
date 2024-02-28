@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, memo } from 'react';
 
-const TradingViewWidget = () => {
+const TradingViewWidget = ({ symbol }) => {
     const container = useRef();
 
     useEffect(() => {
-        // Check if the script has already been appended
         if (!container.current.querySelector('script')) {
             const script = document.createElement("script");
             script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
@@ -14,7 +13,7 @@ const TradingViewWidget = () => {
                 {
                   "height": "100%",
                   "width": "100%",
-                  "symbol": "BITSTAMP:BTCUSD",
+                  "symbol": "INDEX:${symbol}USD",
                   "interval": "D",
                   "timezone": "Etc/UTC",
                   "theme": "light",

@@ -1,57 +1,31 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic";
+import React from "react";
 
-// Import components dynamically
-const PricesDisplay = dynamic(() => import("./components/PricesDisplay"));
-const TrendingCoins = dynamic(() => import("./components/TrendingCoins"));
-const NavBar = dynamic(() => import("./components/NavBar"));
-const GetStarted = dynamic(() => import("./components/GetStarted"));
-const CarouselSec = dynamic(() => import("./components/CarouselSec"));
-
-export default function Home() {
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    handleResize(); // Initial window width
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
+const Page = () => {
   return (
-    <>
-      {isClient && <NavBar />}
-      {windowWidth >= 550 ? (
-        <div className="flex flex-col">
-          <div className="flex flex-row w-full pl-8 pr-8">
-            <div className="flex-grow">{isClient && <PricesDisplay />}</div>
-            <div className="flex flex-col w-[25%] hidden lg:flex">
-              {isClient && <GetStarted />}
-              {isClient && <TrendingCoins />}
-            </div>
-          </div>
-
-          <div>{isClient && <CarouselSec />}</div>
-        </div>
-      ) : (
-        <div className="flex flex-col">
-          <div className="ml-4">{isClient && <PricesDisplay />}</div>
-          <div className="mb-20">{isClient && <CarouselSec />}</div>
-          <div className="flex flex-col w-full">
-            <div className="mx-4 mb-4">{isClient && <GetStarted />}</div>
-            {isClient && <TrendingCoins />}
-          </div>
-        </div>
-      )}
-    </>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <h1 className="text-3xl font-bold mb-8">Choose a cryptocurrency:</h1>
+      <div className="space-y-4">
+        <a
+          href="/ethereum"
+          className="text-blue-500 hover:text-blue-700 block py-2 px-4 rounded-md border border-blue-500 hover:border-blue-700"
+        >
+          Ethereum
+        </a>
+        <a
+          href="/bitcoin"
+          className="text-orange-500 hover:text-orange-700 block py-2 px-4 rounded-md border border-orange-500 hover:border-orange-700"
+        >
+          Bitcoin
+        </a>
+        <a
+          href="/litecoin"
+          className="text-gray-500 hover:text-gray-700 block py-2 px-4 rounded-md border border-gray-500 hover:border-gray-700"
+        >
+          Litecoin
+        </a>
+      </div>
+    </div>
   );
-}
+};
+
+export default Page;
