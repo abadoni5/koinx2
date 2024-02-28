@@ -72,7 +72,7 @@ const PricesDisplay = ({ token }) => {
           {/* Render USD value */}
           {prices && (
             <div className='text-black text-3xl font-medium'>
-              ${numberWithCommas(prices[token].usd)}.05
+              ${numberWithCommas(prices[token].usd)}
             </div>
           )}
           {/* Render 24h change percentage */}
