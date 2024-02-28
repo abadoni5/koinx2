@@ -19,6 +19,7 @@ const GetStarted = () => {
 
 
                 <div className='flex mt-6 mb-4'>
+                    {/* Change */}
                     <img src="frame.png" alt="Get Started" />
                 </div>
                 <div className='bg-white flex flex-row font-medium mb-4 rounded-lg py-3 px-8'>
