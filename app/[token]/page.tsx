@@ -21,7 +21,7 @@ const CarouselSec = dynamic(() =>
   import("../components/CarouselSec").then((mod) => mod.default)
 );
 
-export default function Home({ params }) {
+export default function Home({ params }: { params: any }) {
   const [windowWidth, setWindowWidth] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
