@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import { fetchCoinPrices } from '../utils/prices';
+import { fetchCoinPrices } from '../utils/fetchCoinPrices';
 import { numberWithCommas } from '../utils/numberWithCommas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';

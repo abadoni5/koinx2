@@ -4,9 +4,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import YouMayAlsoLikeCard from './YouMayAlsoLikeCard';
-import { fetchTrendingCoins } from '../utils/trendingCoins';
+import { fetchTrendingCoins } from '../utils/fetchTrendingCoins.js';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 const TrendingCoinsCarousel = () => {
