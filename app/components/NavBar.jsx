@@ -13,8 +13,8 @@ const Navbar = () => {
                 {/* Navigation Links */}
                 <div className="hidden md:flex">
                     <a href="/" className="text-black mr-8 font-medium hover:text-gray-300">Crypto Taxes</a>
-                    <a href="/about" className="text-black font-medium mr-8 hover:text-gray-300">Free Tools</a>
-                    <a href="/contact" className="text-black mr-12 font-medium hover:text-gray-300">Resource Center</a>
+                    <a href="/" className="text-black font-medium mr-8 hover:text-gray-300">Free Tools</a>
+                    <a href="/" className="text-black mr-12 font-medium hover:text-gray-300">Resource Center</a>
                 </div>
 
                 {/* Get Started Button */}
