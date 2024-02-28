@@ -29,7 +29,7 @@ const PricesDisplay = () => {
       {/* For mobile */}
       <div className={`${styles.mobile_show} flex flex-row items-center mb-4`}>
         <div>
-          <img className="h-10" src="bitcoin.png" alt="Bitcoin Logo" />
+          <img className="h-10" src="bitcoin.svg" alt="Bitcoin Logo" />
         </div>
 
         <div className="text-2xl font-medium ml-3">Bitcoin</div>
@@ -42,7 +42,7 @@ const PricesDisplay = () => {
       <div className="bg-white mr-4 flex flex-col justify-center rounded-lg shadow-md p-6 border-2">
         <div className={`${styles.mobile} flex flex-row items-center mb-10`}>
           <div>
-            <img className="h-10" src="bitcoin.png" alt="Bitcoin Logo" />
+            <img className="h-10" src="bitcoin.svg" alt="Bitcoin Logo" />
           </div>
 
           <div className="text-2xl font-medium ml-3">Bitcoin</div>
@@ -66,7 +66,7 @@ const PricesDisplay = () => {
           <p className='text-black font-semibold mb-6'>Bitcoin Price Chart (USD)</p>
           <div className='h-[47vh]'>
             <TradingViewWidget />
-          </div>   
+          </div>
         </div>
       </div>
     </>

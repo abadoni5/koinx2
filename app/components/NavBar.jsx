@@ -5,7 +5,7 @@ const Navbar = () => {
         <nav className="flex items-center justify-between bg-white p-4 mb-4">
             {/* Logo */}
             <div className="flex items-center">
-                <img className="h-5 ml-6" src="logo.png" alt="Logo" />
+                <img className="h-5 ml-6" src="logo.svg" alt="Logo" />
             </div>
 
             {/* Navigation Links and Button */}
