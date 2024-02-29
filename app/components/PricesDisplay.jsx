@@ -19,6 +19,7 @@ const PricesDisplay = ({ token }) => {
       try {
         const info = await coinData(token);
         setCoin(info);
+        setError(false);
       } catch (error) {
         console.error('Error fetching coin data:', error);
         setError(true); // Set error state to true if an error occurs
@@ -32,6 +33,7 @@ const PricesDisplay = ({ token }) => {
       try {
         const data = await fetchCoinPrices(token);
         setPrices(data);
+        setError(false);
       } catch (error) {
         console.error('Error fetching data:', error);
         setError(true); // Set error state to true if an error occurs
