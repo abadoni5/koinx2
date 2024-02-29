@@ -14,7 +14,10 @@ const YouMayAlsoLikeCardCard = ({ coin }) => {
                     {Math.abs(coin.item.data.price_change_percentage_24h.aed.toFixed(1)).toLocaleString(undefined, { minimumIntegerDigits: 2 })}%
                 </div>
             </div>
-            <div className='mt-2 ml-1 text-l font-medium'>{coin.item.data.price}</div>
+            <div className='mt-2 ml-1 text-l font-medium'>
+                {coin.item.data.price.replace(/[^0-9.$]/g, '').substring(0, 5)}
+            </div>
+
 
             <div className='flex justify-center'>
                 <img src={coin.item.data.sparkline} alt={`${coin.item.name} Sparkline`} />
