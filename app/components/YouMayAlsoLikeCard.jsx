@@ -14,6 +14,8 @@ const YouMayAlsoLikeCardCard = ({ coin }) => {
                     {Math.abs(coin.item.data.price_change_percentage_24h.aed.toFixed(1)).toLocaleString(undefined, { minimumIntegerDigits: 2 })}%
                 </div>
             </div>
+
+            {/* Fixes the uneven price that CoinGecko gives */}
             <div className='mt-2 ml-1 text-l font-medium'>
                 {coin.item.data.price.replace(/[^0-9.$]/g, '').substring(0, 5)}
             </div>
