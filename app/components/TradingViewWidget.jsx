@@ -13,7 +13,7 @@ const TradingViewWidget = ({ symbol }) => {
                 {
                   "height": "100%",
                   "width": "100%",
-                  "symbol": "INDEX:${symbol}USD",
+                  "symbol": "COINBASE:${symbol}USD",
                   "interval": "D",
                   "timezone": "Etc/UTC",
                   "theme": "light",

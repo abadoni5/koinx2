@@ -47,10 +47,9 @@ const PricesDisplay = ({ token }) => {
           <img className="h-10" src={coin && coin.image.thumb} alt={`${token} Logo`} />
         </div>
 
-        <div className="text-2xl font-medium ml-3">{token}</div>
-        <div className="ml-3 text-gray-500 font-medium"> {token.toUpperCase()} </div>
-        {/* Assuming "Rank #1" is a static text for all tokens */}
-        <div className="py-4 py-[6px] px-2 ml-10 bg-gray-500 font-light text-white rounded-lg">
+        <div className="text-2xl font-medium ml-3">{token.charAt(0).toUpperCase() + token.slice(1)}</div>
+        <div className="ml-3 text-gray-500 font-medium"> {coin && coin.symbol && coin.symbol.toUpperCase()} </div>
+        <div className="py-4 py-[6px] px-2 ml-8 mr-2 bg-gray-500 font-light text-white rounded-lg">
           {coin && `Rank #${coin.market_cap_rank}`}
         </div>
       </div>
