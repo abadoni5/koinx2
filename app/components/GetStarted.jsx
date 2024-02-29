@@ -7,7 +7,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const GetStarted = () => {
     return (
         <>
-            <div className='rounded-2xl bg-blue-700 flex flex-col items-center pb-8 pl-8 pr-8'>
+            <div className='rounded-2xl bg-blue-700 flex flex-col mt-10 items-center pb-8 pl-8 pr-8'>
                 <div className='text-2xl font-semibold text-white text-center mt-8'>Get Started with KoinX</div>
                 <div className='flex font-semibold text-2xl text-white text-center mt-3'>for FREE</div>
                 <div className='font-light text-white text-align-center flex justify-center items-center h-full mt-4'>
