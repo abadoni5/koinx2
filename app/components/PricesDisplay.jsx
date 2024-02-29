@@ -3,7 +3,7 @@ import { fetchCoinPrices } from '../utils/fetchCoinPrices';
 import { coinData } from '../utils/coinData';
 import { numberWithCommas } from '../utils/numberWithCommas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretUp, faAnglesRight, faHourglass1 } from '@fortawesome/free-solid-svg-icons';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import TradingViewWidget from './TradingViewWidget';
 import styles from '../styles/PricesDisplayStyles.module.css';
 import { useRouter } from "next/navigation";
@@ -11,18 +11,18 @@ import { useRouter } from "next/navigation";
 const PricesDisplay = ({ token }) => {
   const [coin, setCoin] = useState(null);
   const [prices, setPrices] = useState(null);
-  const [error, setError] = useState(false);
-  const router = useRouter();
+  // const [valid, setValid] = useState(true);
+  // const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const info = await coinData(token);
         setCoin(info);
-        setError(false);
+        // setValid(true); // Reset valid state to true when token is successfully fetched
       } catch (error) {
         console.error('Error fetching coin data:', error);
-        setError(true); // Set error state to true if an error occurs
+        // setValid(false); // Set valid state to false if an error occurs
       }
     };
     fetchData();
@@ -33,22 +33,22 @@ const PricesDisplay = ({ token }) => {
       try {
         const data = await fetchCoinPrices(token);
         setPrices(data);
-        setError(false);
+        // setValid(true); // Reset valid state to true when token prices are successfully fetched
       } catch (error) {
         console.error('Error fetching data:', error);
-        setError(true); // Set error state to true if an error occurs
+        // setValid(false); // Set valid state to false if an error occurs
       }
     };
 
     fetchData();
   }, [token]);
 
-  // If error state is true, send to 404 page
-  if (error) {
-    router.push("/404");
-  }
+  // useEffect(() => {
+  //   if (!valid) {
+  //     router.replace("/404"); // Redirect to /404 if valid is false
+  //   }
+  // }, [valid]);
 
-  // If coin object is still null, return null (waiting for data to load)
   if (!coin) {
     return null;
   }
