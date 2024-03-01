@@ -31,7 +31,7 @@ const TrendingCoins = () => {
                         <img src={coin.item.thumb} alt={`${coin.item.name} Thumbnail`} className="h-6 mr-3 rounded-full" />
                         <div className="font-medium">{coin.item.name} ({coin.item.symbol})</div>
                     </div>
-                    <div className={`flex items-center gap-2 px-2 w-[6rem] py-1 rounded-md text-base ${coin.item.data.price_change_percentage_24h.aed < 0 ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`}>
+                    <div className={`flex justify-center items-center gap-2 px-2 w-[6rem] py-1 rounded-md text-base ${coin.item.data.price_change_percentage_24h.aed < 0 ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`}>
                         {coin.item.data.price_change_percentage_24h.aed < 0 ? <FontAwesomeIcon icon={faCaretDown} /> : <FontAwesomeIcon icon={faCaretUp} />}
                         {Math.abs(coin.item.data.price_change_percentage_24h.aed.toFixed(1)).toLocaleString(undefined, { minimumIntegerDigits: 2 })}%
                     </div>

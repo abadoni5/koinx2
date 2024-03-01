@@ -3,7 +3,7 @@ import { fetchCoinPrices } from '../utils/fetchCoinPrices';
 import { coinData } from '../utils/coinData';
 import { numberWithCommas } from '../utils/numberWithCommas';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
+import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import TradingViewWidget from './TradingViewWidget';
 import styles from '../styles/PricesDisplayStyles.module.css';
 import { useRouter } from "next/navigation";
@@ -103,9 +103,9 @@ const PricesDisplay = ({ token }) => {
           )}
           {/* Render 24h change percentage */}
           {prices && (
-            <div className='bg-green-100 flex items-center gap-2 px-2 py-1 ml-8 rounded-md text-l font-regular text-green-600'>
-              <FontAwesomeIcon icon={faCaretUp} />
-              {prices[token].usd_24h_change.toFixed(1)}%
+            <div className={`flex items-center gap-2 px-2 py-1 ml-8 rounded-md text-l font-regular ${prices[token].usd_24h_change > 0 ? 'bg-green-100 text-green-600' : 'bg-red-100 text-red-600'}`}>
+              {prices[token].usd_24h_change < 0 ? <FontAwesomeIcon icon={faCaretDown} /> : <FontAwesomeIcon icon={faCaretUp} />}
+              {Math.abs(prices[token].usd_24h_change.toFixed(1))}%
             </div>
           )}
           <p className='ml-4 text-gray-400'>(24H)</p>

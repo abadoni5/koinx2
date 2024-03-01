@@ -31,7 +31,7 @@ const TrendingCoinsCarousel = () => {
         return (
             <div
                 className={className}
-                style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#ffffff", borderRadius: "50%", width: "40px", height: "40px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)", cursor: "pointer", zIndex: "1", }}
+                style={{ display: "flex", alignItems: "center", cursor: "pointer", zIndex: "1", marginRight: "1rem" }}
                 onClick={onClick}
             >
                 <FontAwesomeIcon icon={faAngleRight} style={{ color: "gray", fontSize: "20px", }} />
@@ -44,7 +44,7 @@ const TrendingCoinsCarousel = () => {
         return (
             <div
                 className={className}
-                style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#ffffff", borderRadius: "50%", width: "40px", height: "40px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)", cursor: "pointer", zIndex: "1", }}
+                style={{ display: "flex", alignItems: "center", cursor: "pointer", zIndex: "1", }}
                 onClick={onClick}
             >
                 <FontAwesomeIcon icon={faAngleLeft} style={{ color: "gray", fontSize: "20px" }} />
