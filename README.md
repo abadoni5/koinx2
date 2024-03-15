@@ -1,4 +1,4 @@
-## Koinx SEO Details Page Assigment
+## Koinx SEO Details Page
 Build on Next.js, deployed using Vercel. 
 - Completed mandatory tasks
 - Completed optional tasks
