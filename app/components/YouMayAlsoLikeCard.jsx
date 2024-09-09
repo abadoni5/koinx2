@@ -1,6 +1,9 @@
 import React from 'react';
 
 const YouMayAlsoLikeCardCard = ({ coin }) => {
+    // Ensure price is a string and handle cases where price might be undefined
+    const priceString = coin.item.data.price ? String(coin.item.data.price) : '';
+
     return (
         <div className="card rounded-xl flex flex-col justify-center border-[1.5px] p-4 bg-white min-w-[252px] max-w-[252px] max-h-[160px] min-h-[160px] ml-4">
 
@@ -17,9 +20,8 @@ const YouMayAlsoLikeCardCard = ({ coin }) => {
 
             {/* Fixes the uneven price that CoinGecko gives */}
             <div className='mt-2 ml-1 text-l font-medium'>
-                {coin.item.data.price.replace(/[^0-9.$]/g, '').substring(0, 5)}
+                {priceString.replace(/[^0-9.$]/g, '').substring(0, 5)}
             </div>
-
 
             <div className='flex justify-center'>
                 <img src={coin.item.data.sparkline} alt={`${coin.item.name} Sparkline`} />
